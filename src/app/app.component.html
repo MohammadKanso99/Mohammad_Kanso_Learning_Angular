@@ -8,49 +8,49 @@
   <title>MAD 307 Assignment 2</title>
 </head>
 <body>
-<!--  <h1>Welcome to {{title}}</h1>-->
-<!--  <h2> My name is {{name}}</h2>-->
-<!--  <h3> I study {{program}}</h3>-->
-<div class="container">
-  <div *ngFor = "let macbooks of macBookList">
 
-    {{macbooks.model}}
-    {{macbooks.chip}}
-    {{macbooks.serialNumber}}
-    {{macbooks.memory}}
-    {{macbooks.color}}
-    {{macbooks.hasOwner}}
+<div class="container">
+  <div *ngFor = "let macbook of macBookList" class="macbookInfo">
+
+    <h2>{{macbook.model}}</h2>
+    <p>{{macbook.chip}} chip</p>
+    <p>{{macbook.memory}} GB</p>
+    <p>{{macbook.color}}</p>
+    <p>Serial Number: {{macbook.serialNumber}}</p>
+
+    <!--I checked this method on w3schools on how to ngIf -else -->
+    <p *ngIf="macbook.hasOwner; else noOwner">This MacBook has an owner.</p>
+    <ng-template #noOwner><p>This MacBook has no owner</p></ng-template>
   </div>
 </div>
 
 </body>
 </html>
 
-<!--<style>-->
+<style>
+  .container {
+    width: 50%;
+    margin: 0 auto;
+  }
 
-<!--  h1{-->
-<!--    font-family: "sans-serif";-->
-<!--    font-style: italic;-->
-<!--    font-weight: bold;-->
-<!--    text-align: center;-->
-<!--    font-size: x-large;-->
-<!--    color: red;-->
-<!--    margin: 50px 0;-->
-<!--  }-->
+  .macbookInfo{
+    padding: 20px;
+    background-color: antiquewhite;
+    border-radius: 8px;
+  }
 
-<!--  h2{-->
-<!--    font-family: "fantasy";-->
-<!--    text-align: center;-->
-<!--    font-size: x-large;-->
-<!--    color: red;-->
-<!--    margin: 50px 0;-->
-<!--  }-->
+  h2{
+    font-family: sans-serif;
+    color: black;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 20px;
+  }
 
-<!--  h3{-->
-<!--    font-family: "sans-serif";-->
-<!--    text-align: center;-->
-<!--    font-size: x-large;-->
-<!--    color: red;-->
-<!--    margin: 50px 0;-->
-<!--  }-->
-<!--</style>-->
+  p{
+    font-family: monospace;
+    color: black;
+    text-align: center;
+    margin: 5px;
+  }
+</style>

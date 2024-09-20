@@ -2,20 +2,15 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {MacBook} from "./models/mac-book";
 import {NgForOf} from "@angular/common";
+import {NgIf} from "@angular/common"; // add ngIf import
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf],
+  imports: [RouterOutlet, NgForOf, NgIf], // add here too
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-// export class AppComponent {
-//   title = 'MohammadKansoLearningAngular';
-//   name = 'Mohammad Kanso';
-//   program = 'Computer Programming';
-//
-// }
 
 export class AppComponent {
   macBook1: MacBook = {model: 'MacBook Pro 14-inch 2021', chip: 'M1', serialNumber: '11A11', memory: 16, color: 'Silver', hasOwner: true };
