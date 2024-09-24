@@ -1,8 +1,13 @@
-<app-mac-book-list-item [macBookListItem]="macBook1"></app-mac-book-list-item>
-<app-mac-book-list-item [macBookListItem]="macBook2"></app-mac-book-list-item>
-<app-mac-book-list-item [macBookListItem]="macBook3"></app-mac-book-list-item>
-<app-mac-book-list-item [macBookListItem]="macBook4"></app-mac-book-list-item>
-<app-mac-book-list-item [macBookListItem]="macBook5"></app-mac-book-list-item>
-<app-mac-book-list-item [macBookListItem]="macBook6"></app-mac-book-list-item>
+<!-- part 11 ng for loop-->
+<app-mac-book-list-item *ngFor="let macbook of macBookList" [macBookListItem]="macbook"></app-mac-book-list-item>
 
-<p>{{macBook1.model}}</p>
+<!--part 7-->
+<!--part 9 one way binding -->
+<!--<app-mac-book-list-item [macBookListItem]="macBook1"></app-mac-book-list-item>-->
+<!--<app-mac-book-list-item [macBookListItem]="macBook2"></app-mac-book-list-item>-->
+<!--<app-mac-book-list-item [macBookListItem]="macBook3"></app-mac-book-list-item>-->
+<!--<app-mac-book-list-item [macBookListItem]="macBook4"></app-mac-book-list-item>-->
+<!--<app-mac-book-list-item [macBookListItem]="macBook5"></app-mac-book-list-item>-->
+<!--<app-mac-book-list-item [macBookListItem]="macBook6"></app-mac-book-list-item>-->
+
+

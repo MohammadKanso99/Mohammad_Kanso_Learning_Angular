@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
 import {MacBook} from "../models/mac-book";
 import {MacBookListItemComponent} from "../mac-book-list-item/mac-book-list-item.component";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-mac-book-list',
   standalone: true,
   imports: [
-    MacBookListItemComponent
+    MacBookListItemComponent,
+    NgForOf
   ],
   templateUrl: './mac-book-list.component.html',
   styleUrl: './mac-book-list.component.css'
 })
+
+// part 6
 export class MacBookListComponent {
   macBook1: MacBook = {model: 'MacBook Pro 14-inch 2021', chip: 'M1', serialNumber: '11A11', memory: 16, color: 'Silver', hasOwner: true };
   macBook2: MacBook = {model: 'MacBook Pro 16-inch 2023', chip: 'M2', serialNumber: '11A22', memory: 32, color: 'Space Grey', hasOwner: false };

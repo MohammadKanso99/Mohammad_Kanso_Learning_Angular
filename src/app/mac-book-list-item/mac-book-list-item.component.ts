@@ -8,7 +8,11 @@ import {MacBook} from "../models/mac-book";
   templateUrl: './mac-book-list-item.component.html',
   styleUrl: './mac-book-list-item.component.css'
 })
+
+// part 8 property input to the component
 export class MacBookListItemComponent{
   @Input() macBookListItem?: MacBook;
 
 }
+
+
