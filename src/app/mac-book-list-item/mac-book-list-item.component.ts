@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {MacBook} from "../models/mac-book";
 
 @Component({
   selector: 'app-mac-book-list-item',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './mac-book-list-item.component.html',
   styleUrl: './mac-book-list-item.component.css'
 })
-export class MacBookListItemComponent {
+export class MacBookListItemComponent{
+  @Input() macBookListItem?: MacBook;
 
 }
