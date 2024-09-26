@@ -1,5 +1,11 @@
 <!-- part 11 ng for loop-->
-<app-mac-book-list-item *ngFor="let macbook of macBookList" [macBookListItem]="macbook"></app-mac-book-list-item>
+<app-mac-book-list-item
+  *ngFor="let macbook of macBookList; even as isEven"
+  [macBookListItem]="macbook"
+  [background]=" isEven ? 'pink' : 'red' ">
+</app-mac-book-list-item>
+
+
 
 <!--part 7-->
 <!--part 9 one way binding -->

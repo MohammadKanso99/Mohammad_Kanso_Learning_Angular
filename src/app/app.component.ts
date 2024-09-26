@@ -7,7 +7,7 @@ import {MacBookListComponent} from "./mac-book-list/mac-book-list.component"; //
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, MacBookListComponent], // add here too
+  imports: [ MacBookListComponent], // add here too
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
