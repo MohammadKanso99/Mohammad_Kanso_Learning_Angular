@@ -15,6 +15,7 @@ import {NgStyle} from "@angular/common";
 // part 8 property input to the component
 export class MacBookListItemComponent{
   @Input() macBookListItem?: MacBook;
+  // step 12
   @Input() background ?: string;
 
 }
