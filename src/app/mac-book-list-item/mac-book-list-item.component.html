@@ -9,10 +9,10 @@
 </head>
 <body>
 
-<div [ngStyle]="{'background-color' : background}" ><
+<div [ngStyle]="{'background-color' : background}" >
 <h2>{{macBookListItem?.model}}</h2>
-<img> {{}}</img>
-></div>
+<img src="macbooks/{{macBookListItem?.serialNumber}}.jpg" alt="macbooks images">
+</div>
 
 </body>
 </html>
@@ -22,4 +22,17 @@ div {
   border: 2px red solid;
   text-align: center;
 }
+
+img{
+  width: 250px;
+  height: 200px;
+}
 </style>
+
+<!--References-->
+<!--https://www.simply.ca/products/copy-of-macbook-pro-14-inch-2021-->
+<!--https://www.apple.com/ca/shop/buy-mac/macbook-pro/16-inch-->
+<!--https://www.apple.com/ca/shop/buy-mac/macbook-air/15-inch-m3-->
+<!--https://www.walmart.ca/en/ip/Apple-2024-MacBook-Air-13-inch-Laptop-M3-chip-13-6-inch-Liquid-Retina-Display-8GB-Unified-Memory-256GB-SSD-Storage-Backlit-Keyboard-1080p-FaceTime-HD/PRD15OK6OOD0V6K-->
+<!--https://www.apple.com/ca/shop/buy-mac/macbook-pro/16-inch-->
+<!--https://www.simply.ca/products/copy-of-macbook-pro-14-inch-2021-->
