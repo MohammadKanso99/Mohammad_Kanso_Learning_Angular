@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {MacBook} from "../models/mac-book";
+import {MacBook} from "../Shared/models/mac-book";
 import {NgStyle} from "@angular/common";
 
 @Component({
