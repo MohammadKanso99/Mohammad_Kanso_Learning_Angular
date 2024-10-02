@@ -1,4 +1,5 @@
 export interface MacBook {
+  id: number;
   model: string;
   chip: string;
   memory: number;
