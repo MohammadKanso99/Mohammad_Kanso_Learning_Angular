@@ -34,4 +34,10 @@ export class MacBookListComponent implements OnInit { // step 8 implement
       complete:() => console.log("Macbook data fetch complete!")
     })
   }
+
+  // itemClick(): void {
+  //
+  //
+  // }
+
 }
