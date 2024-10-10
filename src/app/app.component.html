@@ -1,8 +1,7 @@
-<app-mac-book-list-item [macBookListItem]="macBook"
-[background]="'aqua'">
-
-</app-mac-book-list-item>
-
-<app-mac-book-list>
-
-</app-mac-book-list>
+<nav>
+  <ul>
+    <li><a routerLink = "/macbooks" routerLinkActive = "active">Home Page</a></li>
+    <li><a routerLink = "/modify" routerLinkActive = "active" >Modify List Item</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

@@ -1,12 +1,13 @@
 import {Component, Input} from '@angular/core';
 import {MacBook} from "../Shared/models/mac-book";
-import {NgStyle} from "@angular/common";
+import {NgOptimizedImage, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-mac-book-list-item',
   standalone: true,
   imports: [
-    NgStyle
+    NgStyle,
+    NgOptimizedImage
   ],
   templateUrl: './mac-book-list-item.component.html',
   styleUrl: './mac-book-list-item.component.css'

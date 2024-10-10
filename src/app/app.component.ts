@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {NgForOf} from "@angular/common";
 import {NgIf} from "@angular/common";
 import {MacBookListComponent} from "./mac-book-list/mac-book-list.component";
@@ -10,7 +10,7 @@ import {MacBook} from "./Shared/models/mac-book"; // add ngIf import
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MacBookListComponent, MacBookListItemComponent], // add here too
+  imports: [MacBookListComponent, MacBookListItemComponent, RouterLink, RouterLinkActive, RouterOutlet], // add here too
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

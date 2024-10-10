@@ -4,11 +4,16 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import {macbookList} from "./app/Shared/mockMacBook.data";
 import {MacBookListComponent} from "./app/mac-book-list/mac-book-list.component";
+import {ModifyStudentComponent} from "./app/modify-student/modify-student.component";
+import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.component";
 
 
 const routes: Routes = [
   {path:'', redirectTo: '/macbooks', pathMatch: 'full'},
-  { path: 'macbooks', component: MacBookListComponent}];
+  { path: 'macbooks', component: MacBookListComponent},
+  { path: 'modify', component: ModifyStudentComponent},
+  { path: '**', component: PageNotFoundComponent}];
+
 
 bootstrapApplication(AppComponent, {
   providers: [provideRouter(routes)]
