@@ -2,8 +2,8 @@
 <app-mac-book-list-item
   *ngFor="let macbook of macBookList; even as isEven"
   [macBookListItem]="macbook"
-  [background]=" isEven ? 'pink' : 'grey' ">
-<!--  (click)="itemClick()"-->
+  [background]=" isEven ? 'pink' : 'grey' "
+  [routerLink]="['/item', macbook.id]">
 
 
 </app-mac-book-list-item>

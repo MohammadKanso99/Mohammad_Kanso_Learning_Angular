@@ -3,13 +3,15 @@ import {MacBook} from "../Shared/models/mac-book";
 import {MacBookListItemComponent} from "../mac-book-list-item/mac-book-list-item.component";
 import {NgForOf} from "@angular/common";
 import {MacbooksService} from "../services/macbooks.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-mac-book-list',
   standalone: true,
   imports: [
     MacBookListItemComponent,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './mac-book-list.component.html',
   styleUrl: './mac-book-list.component.css'
