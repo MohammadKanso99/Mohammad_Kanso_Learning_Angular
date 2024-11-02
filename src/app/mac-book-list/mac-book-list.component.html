@@ -5,8 +5,14 @@
   [background]=" isEven ? 'pink' : 'grey' "
   [routerLink]="['/item', macbook.id]">
 
+  <button (click)="onDelete(macbook.id)">Delete</button>
+  <button (click)="onEdit(macbook.id)">Edit</button>
+
 
 </app-mac-book-list-item>
+
+
+
 
 
 

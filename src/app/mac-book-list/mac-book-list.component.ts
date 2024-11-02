@@ -1,17 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 import {MacBook} from "../Shared/models/mac-book";
 import {MacBookListItemComponent} from "../mac-book-list-item/mac-book-list-item.component";
-import {NgForOf} from "@angular/common";
+import {CommonModule, NgForOf} from "@angular/common";
 import {MacbooksService} from "../services/macbooks.service";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-mac-book-list',
   standalone: true,
-  imports: [
+  imports: [CommonModule,
     MacBookListItemComponent,
     NgForOf,
-    RouterLink
+    RouterLink, RouterOutlet
   ],
   templateUrl: './mac-book-list.component.html',
   styleUrl: './mac-book-list.component.css'
@@ -21,9 +21,10 @@ import {RouterLink} from "@angular/router";
 export class MacBookListComponent implements OnInit { // step 8 implement
 
   macBookList: MacBook[] = [];
+  selectedMacBook?: MacBook;
 
   // step 7
-  constructor (private macbookServices: MacbooksService){
+  constructor (private macbookServices: MacbooksService, private router: Router) {
     //this constructor is primarily used for dependency injection
 
   }
@@ -37,9 +38,19 @@ export class MacBookListComponent implements OnInit { // step 8 implement
     })
   }
 
-  // itemClick(): void {
-  //
-  //
-  // }
+  selectMacBook (macBook: MacBook): void {
+    this.selectedMacBook = macBook;
+  }
+
+  onDelete(macbookId: any): void {
+    this.macbookServices.deleteMacbook(macbookId);
+    this.macBookList = this.macBookList.filter(macbook => macbook.id !== macbookId);
+  }
+
+
+  onEdit(macbookId: any): void {
+    this.router.navigate(['/modify-macbook',macbookId]);
+
+  }
 
 }
