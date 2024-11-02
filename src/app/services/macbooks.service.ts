@@ -38,10 +38,12 @@ export class MacbooksService {
   }
 
   // delete macbook 9d
-  deleteMacbook(macbookId: number): Observable<MacBook[]> {
+  deleteMacbook(macbookId: number): void {
     this.macbooks = this.macbooks.filter(macbook => macbook.id !== macbookId);
-    return of(this.macbooks);
+   }
+  // New method to generate a new unique ID
+  generateNewId(): number {
+    return this.macbooks.length > 0 ? Math.max(...this.macbooks.map(macbook => macbook.id)) + 1 : 1;
   }
-
 
 }

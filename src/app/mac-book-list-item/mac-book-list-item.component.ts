@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MacBook} from "../Shared/models/mac-book";
 import {NgOptimizedImage, NgStyle} from "@angular/common";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {MacbooksService} from "../services/macbooks.service";
 
 @Component({
@@ -25,6 +25,7 @@ export class MacBookListItemComponent implements OnInit{
   currentIndex: number = 0;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private macbookService: MacbooksService,
   ) {}
@@ -43,6 +44,8 @@ export class MacBookListItemComponent implements OnInit{
         }
       });
     });
-  }}
+    }
+
+      }
 
 
