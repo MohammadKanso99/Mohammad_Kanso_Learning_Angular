@@ -10,8 +10,8 @@
 <body>
 
 <div [ngStyle]="{'background-color' : background}" >
-<h2>{{macBookListItem?.model}}</h2>
-<img ngSrc="macbooks/{{macBookListItem?.serialNumber}}.jpg" width="400" height="200" alt="macbooks images">
+  <h2>{{macBookListItem?.model}}</h2>
+  <img ngSrc="macbooks/{{macBookListItem?.serialNumber}}.jpg" width="400" height="200" alt="macbooks images">
   <ng-content></ng-content>
 </div>
 
@@ -20,15 +20,15 @@
 </html>
 
 <style>
-div {
-  border: 2px red solid;
-  text-align: center;
-}
+  div {
+    border: 2px red solid;
+    text-align: center;
+  }
 
-img{
-  width: 250px;
-  height: 200px;
-}
+  img{
+    width: 250px;
+    height: 200px;
+  }
 </style>
 
 <!--References-->

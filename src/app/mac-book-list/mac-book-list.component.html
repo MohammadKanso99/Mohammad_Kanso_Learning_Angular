@@ -9,7 +9,11 @@
   <button (click)="onEdit(macbook.id)">Edit</button>
 
 
+
 </app-mac-book-list-item>
+
+<div *ngIf="error" class="error">{{ error }}</div>
+
 
 
 
@@ -24,5 +28,3 @@
 <!--<app-mac-book-list-item [macBookListItem]="macBook4"></app-mac-book-list-item>-->
 <!--<app-mac-book-list-item [macBookListItem]="macBook5"></app-mac-book-list-item>-->
 <!--<app-mac-book-list-item [macBookListItem]="macBook6"></app-mac-book-list-item>-->
-
-

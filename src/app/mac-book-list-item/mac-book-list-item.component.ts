@@ -44,8 +44,6 @@ export class MacBookListItemComponent implements OnInit{
         }
       });
     });
-    }
+  }
 
-      }
-
-
+}

@@ -15,6 +15,7 @@ import {NgIf} from "@angular/common";
 export class ModifyMacbookComponent implements OnInit {
   macbookForm: FormGroup;
   macbook: MacBook | undefined;
+  error: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -32,12 +33,17 @@ export class ModifyMacbookComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id){
-      this.macbookService.getMacbookById(+id).subscribe(macbook => {
-        if (macbook){
-          this.macbook = macbook;
-          this.macbookForm.patchValue(macbook);
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      this.macbookService.getMacbookById(id).subscribe( {
+        next: macbook => {
+          if (macbook) {
+            this.macbookForm.patchValue(macbook);
+          }
+        },
+        error: err => {
+          this.error = 'Error fetching macbook';
+          console.error('Error fetching macbook:', err);
         }
       });
     }
@@ -47,17 +53,23 @@ export class ModifyMacbookComponent implements OnInit {
     const macbook: MacBook = this.macbookForm.value;
 
     if (macbook.id) {
-      this.macbookService.updateMacbook(macbook);
+      this.macbookService.updateMacbook(macbook).subscribe(() => this.router.navigate(['/macbooks']));
     } else {
-      // For adding a new Macbook, generate a new ID
-      const newId = this.macbookService.generateNewId(); // This method will create a new ID
-      macbook.id = newId;
-      this.macbookService.addMacbook(macbook);
+      macbook.id = this.macbookService.generateNewId();
+      this.macbookService.addMacbook(macbook).subscribe(() => this.router.navigate(['/macbooks']));
     }
-    this.router.navigate(['/macbooks']);
   }
-  navigateToPhoneList(): void {
-    this.router.navigate(['/phones']);
+
+  onDelete(): void {
+    const id = this.macbookForm.value.id;
+    if (id) {
+      this.macbookService.deleteMacbook(id).subscribe(() => this.router.navigate(['/macbooks']));
+    }
+  }
+
+
+  navigateToMacbookList(): void {
+    this.router.navigate(['/macbooks']);
   }
 }
 

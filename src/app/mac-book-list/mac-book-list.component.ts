@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MacBook} from "../Shared/models/mac-book";
 import {MacBookListItemComponent} from "../mac-book-list-item/mac-book-list-item.component";
-import {CommonModule, NgForOf} from "@angular/common";
+import {CommonModule, NgForOf, NgIf} from "@angular/common";
 import {MacbooksService} from "../services/macbooks.service";
 import {Router, RouterLink, RouterOutlet} from "@angular/router";
 
@@ -10,7 +10,7 @@ import {Router, RouterLink, RouterOutlet} from "@angular/router";
   standalone: true,
   imports: [CommonModule,
     MacBookListItemComponent,
-    NgForOf,
+    NgForOf, NgIf,
     RouterLink, RouterOutlet
   ],
   templateUrl: './mac-book-list.component.html',
@@ -22,6 +22,7 @@ export class MacBookListComponent implements OnInit { // step 8 implement
 
   macBookList: MacBook[] = [];
   selectedMacBook?: MacBook;
+  error: string = ''; // Added error property
 
   // step 7
   constructor (private macbookServices: MacbooksService, private router: Router) {
@@ -32,10 +33,15 @@ export class MacBookListComponent implements OnInit { // step 8 implement
   // step 8 continue
   ngOnInit(): void {
     this.macbookServices.getMacbook().subscribe({
-      next: (data: MacBook[]) => this.macBookList = data, // ??
-      error:err => console.error("Error fetching Macbooks", err),
-      complete:() => console.log("Macbook data fetch complete!")
-    })
+      next: (data: MacBook[]) => {
+        this.macBookList = data;
+      },
+      error: (err) => {
+        console.error("Error fetching Macbooks", err);
+        this.error = "Failed to fetch MacBook data. Please try again later."; // Set error message
+      },
+      complete: () => console.log("MacBook data fetch complete!")
+    });
   }
 
   selectMacBook (macBook: MacBook): void {
