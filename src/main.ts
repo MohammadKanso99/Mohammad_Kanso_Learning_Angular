@@ -7,6 +7,10 @@ import {MacBookListComponent} from "./app/mac-book-list/mac-book-list.component"
 import {ModifyMacbookComponent} from "./app/modify-macbook/modify-macbook.component";
 import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.component";
 import {MacBookListItemComponent} from "./app/mac-book-list-item/mac-book-list-item.component";
+import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
+import {InMemoryDataService} from "./app/services/in-memory-data.service";
+import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {importProvidersFrom} from "@angular/core";
 
 
 const routes: Routes = [
@@ -20,5 +24,9 @@ const routes: Routes = [
 
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)]
-}).then(() => console.log('Bootstrap successful'));
+  providers: [
+    provideHttpClient(), // Ensure that HTTP interceptors are properly configured
+    provideRouter(routes),
+    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1000 })) // Import providers dynamically
+  ],
+}).catch((err) => console.error(err));
