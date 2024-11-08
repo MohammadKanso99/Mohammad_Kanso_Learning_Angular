@@ -14,8 +14,9 @@ const routes: Routes = [
   { path: 'macbooks', component: MacBookListComponent},
   { path: 'modify', component: ModifyMacbookComponent},
   { path: 'item/:id', component: MacBookListItemComponent},
-  { path: '**', component: PageNotFoundComponent}];
-
+  {path: 'modify-macbook/:id', component: ModifyMacbookComponent},
+  { path: '**', component: PageNotFoundComponent},
+  ];
 
 
 bootstrapApplication(AppComponent, {
