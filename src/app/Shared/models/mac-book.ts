@@ -5,6 +5,7 @@ export interface MacBook {
   memory: number;
   color: string;
   serialNumber: string;
+  budget: number;
   hasOwner?: boolean;
 }
 

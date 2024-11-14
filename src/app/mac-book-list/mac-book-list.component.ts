@@ -3,7 +3,7 @@ import {MacBook} from "../Shared/models/mac-book";
 import {MacBookListItemComponent} from "../mac-book-list-item/mac-book-list-item.component";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
 import {MacbooksService} from "../services/macbooks.service";
-import {Router, RouterLink, RouterOutlet} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-mac-book-list',
@@ -11,7 +11,7 @@ import {Router, RouterLink, RouterOutlet} from "@angular/router";
   imports: [CommonModule,
     MacBookListItemComponent,
     NgForOf, NgIf,
-    RouterLink, RouterOutlet
+    RouterLink
   ],
   templateUrl: './mac-book-list.component.html',
   styleUrl: './mac-book-list.component.css'

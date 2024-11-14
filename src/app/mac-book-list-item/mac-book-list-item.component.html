@@ -11,6 +11,7 @@
 
 <div [ngStyle]="{'background-color' : background}" >
   <h2>{{macBookListItem?.model}}</h2>
+  <p>BUDGET: {{macBookListItem?.budget | currency: 'CAD'}}</p>
   <img ngSrc="macbooks/{{macBookListItem?.serialNumber}}.jpg" width="400" height="200" alt="macbooks images">
   <ng-content></ng-content>
 </div>

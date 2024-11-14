@@ -1,21 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import {NgForOf} from "@angular/common";
-import {NgIf} from "@angular/common";
-import {MacBookListComponent} from "./mac-book-list/mac-book-list.component";
-import {MacBookListItemComponent} from "./mac-book-list-item/mac-book-list-item.component";
+import {DatePipe, UpperCasePipe} from "@angular/common";
 import {MacbooksService} from "./services/macbooks.service";
 import {MacBook} from "./Shared/models/mac-book"; // add ngIf import
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MacBookListComponent, MacBookListItemComponent, RouterLink, RouterLinkActive, RouterOutlet], // add here too
+  imports: [ RouterLink, RouterLinkActive, RouterOutlet, DatePipe, UpperCasePipe], // add here too
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 export class AppComponent implements OnInit {
+
+  myDate = Date.now();
+  title: string = 'MacBooks';
 
   macBook: MacBook | undefined;
 
