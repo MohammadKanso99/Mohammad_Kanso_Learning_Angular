@@ -4,13 +4,14 @@ import {NgOptimizedImage, NgStyle} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MacbooksService} from "../services/macbooks.service";
 import {CurrencyPipe} from "@angular/common";
+import {FullNamePipe} from "../pipes/full-name.pipe";
 
 @Component({
   selector: 'app-mac-book-list-item',
   standalone: true,
   imports: [
     NgStyle,
-    NgOptimizedImage, CurrencyPipe
+    NgOptimizedImage, CurrencyPipe, FullNamePipe
   ],
   templateUrl: './mac-book-list-item.component.html',
   styleUrl: './mac-book-list-item.component.css'

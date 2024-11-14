@@ -4,7 +4,6 @@ import {MacBookListItemComponent} from "../mac-book-list-item/mac-book-list-item
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
 import {MacbooksService} from "../services/macbooks.service";
 import {Router, RouterLink} from "@angular/router";
-
 @Component({
   selector: 'app-mac-book-list',
   standalone: true,
