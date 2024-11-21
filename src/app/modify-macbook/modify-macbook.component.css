@@ -1,0 +1,108 @@
+/* Container for the entire form */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Form group to space each field */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for labels */
+label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+/* Checkbox styling */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label {
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+
+/* Buttons shared styles */
+button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Submit button */
+button.submit-button {
+  background-color: #4a90e2;
+}
+
+
+button.submit-button:hover {
+  background-color: #357ab7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset button */
+button[type="button"] {
+  background-color: red;
+  margin-top: 1rem;
+}
+
+button[type="button"]:hover {
+  background-color: darkred;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Error styling */
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border-color: #e74c3c;
+}
+
+.form-group > div {
+  color: #e74c3c;
+  font-size: 0.875rem;
+}
+
+.invalid-form-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* Optional: Style adjustments for better UX */
+textarea {
+  resize: vertical;
+}

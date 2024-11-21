@@ -5,11 +5,12 @@ import {MacbooksService} from "../services/macbooks.service";
 import {MacBook} from "../Shared/models/mac-book";
 import {NgIf} from "@angular/common";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
 
 @Component({
   selector: 'app-modify-macbook',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgIf, HoverHighlightDirective],
+  imports: [FormsModule, ReactiveFormsModule, NgIf, HoverHighlightDirective, HighlightOnFocusDirective],
   templateUrl: './modify-macbook.component.html',
   styleUrl: './modify-macbook.component.css'
 })
