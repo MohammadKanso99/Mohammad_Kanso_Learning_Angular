@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'macbooks', component: MacBookListComponent},
   { path: 'modify',
     loadComponent: () =>
-      import('./app/mac-book-list-item/mac-book-list-item.component').then(m => m.MacBookListItemComponent) },
+      import('./app/modify-macbook/modify-macbook.component').then(m => m.ModifyMacbookComponent) },
   { path: 'item/:id', component: MacBookListItemComponent},
   {path: 'modify-macbook/:id',
     loadComponent: () =>

@@ -4,11 +4,12 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {MacbooksService} from "../services/macbooks.service";
 import {MacBook} from "../Shared/models/mac-book";
 import {NgIf} from "@angular/common";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-modify-macbook',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgIf],
+  imports: [FormsModule, ReactiveFormsModule, NgIf, HoverHighlightDirective],
   templateUrl: './modify-macbook.component.html',
   styleUrl: './modify-macbook.component.css'
 })

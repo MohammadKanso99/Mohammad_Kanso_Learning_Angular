@@ -32,9 +32,9 @@
   </div>
 
   <!-- Submit Button (Add or Update) -->
-  <button type="submit">ADD/EDIT</button>
-  <button type="button" (click)="macbookForm.reset()">Reset</button>
-  <button type="button" (click)="navigateToMacbookList()">Back to list</button>
+  <button type="submit" appHoverHighlight="lightblue">ADD/EDIT </button>
+  <button type="button" (click)="macbookForm.reset()" appHoverHighlight="lightblue">Reset</button>
+  <button type="button" (click)="navigateToMacbookList()" appHoverHighlight="lightblue" >Back to list</button>
 
   <div *ngIf="error" class="error">{{ error }}</div>
 
