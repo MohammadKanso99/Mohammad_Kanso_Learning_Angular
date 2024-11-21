@@ -54,7 +54,7 @@ export class MacBookListComponent implements OnInit { // step 8 implement
 
 
   onEdit(macbookId: any): void {
-    this.router.navigate(['/modify']);
+    this.router.navigate(['/modify-macbook/', macbookId]);
 
   }
 

@@ -6,7 +6,7 @@
   [routerLink]="['/item', macbook.id]">
 
   <button (click)="onDelete(macbook.id)">Delete</button>
-  <button (click)="onEdit(macbook.id)">Edit</button>
+  <button (click)="onEdit(macbook.id); $event.stopPropagation()">Edit</button>
 
 </app-mac-book-list-item>
 
